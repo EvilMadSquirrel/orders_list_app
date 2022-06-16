@@ -16,10 +16,10 @@ console:
 	@docker compose run web python manage.py shell
 
 test:
-	@poetry run python manage.py test
+	@docker compose run web python manage.py test
 
 lint:
-	@poetry run flake8 orders
+	@poetry run flake8 orders utils
 
 secretkey:
 	@poetry run python -c 'from django.utils.crypto import get_random_string; print(get_random_string(40))'
