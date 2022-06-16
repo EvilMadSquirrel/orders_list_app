@@ -7,6 +7,7 @@
 ### Установка:
 
 Установить make. Установить Poetry. Установить Docker Engine и Docker Compose.
+Для работы с Google API скопируйте свои OAuth client ID credentials в файл "credentials.json" и поместите его в корневую папку проекта. 
 
 ```bash
 git clone https://github.com/EvilMadSquirrel/orders_list_app.git
