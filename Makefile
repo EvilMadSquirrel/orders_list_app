@@ -25,4 +25,4 @@ secretkey:
 	@poetry run python -c 'from django.utils.crypto import get_random_string; print(get_random_string(40))'
 
 
-.PHONY: install setup shell lint test check start
+.PHONY: install setup shell lint test check start export

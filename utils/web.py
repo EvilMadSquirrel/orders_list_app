@@ -2,6 +2,7 @@ from __future__ import print_function
 
 import os.path
 import requests
+import xmltodict
 
 
 from google.auth.transport.requests import Request
@@ -61,4 +62,7 @@ def get_orders():
 def get_dollar_price():
     response = requests.get('http://www.cbr.ru/scripts/XML_daily.asp')
     response.raise_for_status()
-    return response.json()
+    dict_data = xmltodict.parse(response.content)
+    dollar_price_string: str = list(filter(lambda v: v['@ID'] == 'R01235', dict_data['ValCurs']['Valute']))[0]['Value']
+    return float(dollar_price_string.replace(',', '.'))
+
