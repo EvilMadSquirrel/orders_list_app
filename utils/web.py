@@ -1,6 +1,8 @@
 from __future__ import print_function
 
 import os.path
+import requests
+
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -56,3 +58,7 @@ def get_orders():
         print(err)
 
 
+def get_dollar_price():
+    response = requests.get('http://www.cbr.ru/scripts/XML_daily.asp')
+    response.raise_for_status()
+    return response.json()
