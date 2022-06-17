@@ -23,3 +23,15 @@ services:
       - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
+  frontend:
+    restart: always
+    command: npm start
+    container_name: front
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    depends_on:
+      - web
