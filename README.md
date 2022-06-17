@@ -11,6 +11,8 @@
 | Список заказов JSON       | GET     | http://0.0.0.0:8000/api/v1/orders/ |
 | Веб-страница с диаграммой | GET     | http://localhost:3000/             |
 
+Таблица с данными: https://docs.google.com/spreadsheets/d/1o8Nm2n8yEfwtgitELuBJFUz91SB2tdO4Z0l2MA3B4pQ/edit?usp=sharing
+
 ### Установка:
 
 Установить make. Установить Poetry. Установить Docker Engine и Docker Compose.
